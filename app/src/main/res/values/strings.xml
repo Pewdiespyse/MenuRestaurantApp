@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Menu App</string>
+    <string name="title_activity_main_menu">Main Menu</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_fish">Fish</string>
+    <string name="title_squid">Squid</string>
+    <string name="title_chicken">Chick</string>
+    <string name="title_beer">Beer</string>
+    <string name="title_wine">Wine</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="action_search">Search</string>
+    <string name="sign_up">Sign up</string>
+    <string name="login_button">Login</string>
+    <string name="password_hint">Password</string>
+    <string name="email_hint">Email</string>
+    <string name="no_text"></string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="title_activity_login">Login</string>
+    <string name="action_order_management">Order Cart</string>
+    <string name="action_menu_management">Menu Manager</string>
+    <string name="title_search_result">Food Found</string>
+</resources>

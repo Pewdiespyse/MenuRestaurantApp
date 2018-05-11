@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="group8.tkgd.menurestaurantapp">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.IntroActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.MainMenuActivity"
+            android:label="@string/title_activity_main_menu" />
+        <activity
+            android:name=".activity.LoginActivity"
+            android:label="@string/title_activity_login" />
+        <activity android:name=".activity.DishDetailActivity" />
+        <activity android:name=".activity.OrderManagementActivity" />
+        <activity android:name=".activity.MenuManagementActivity" />
+        <activity android:name=".activity.SearchListActivity" />
+        <activity android:name=".activity.MenuAddDetailActivity"></activity>
+    </application>
+
+</manifest>

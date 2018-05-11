@@ -1,0 +1,28 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="group8.tkgd.menurestaurantapp.activity.MainMenuActivity">
+
+    <item
+        android:id="@+id/item_action_search"
+        android:title="@string/action_search"
+        app:showAsAction="ifRoom|collapseActionView"
+        android:icon="@drawable/ic_action_search"
+        />
+    <item
+        android:id="@+id/item_action_sign_in"
+        android:title="@string/action_sign_in"
+        app:showAsAction="ifRoom|collapseActionView"
+        android:icon="@drawable/ic_action_sign_in"
+        />
+    <item
+        android:icon="@drawable/ic_action_order_management"
+        android:id="@+id/item_action_order_management"
+        android:title="@string/action_order_management"
+        app:showAsAction="collapseActionView|withText"/>
+    <item
+        android:icon="@drawable/ic_action_menu_management"
+        android:id="@+id/item_action_menu_management"
+        android:title="@string/action_menu_management"
+        app:showAsAction="collapseActionView|withText"/>
+</menu>
