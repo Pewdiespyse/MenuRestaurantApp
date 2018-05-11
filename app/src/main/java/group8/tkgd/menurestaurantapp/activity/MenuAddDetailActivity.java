@@ -46,6 +46,7 @@ public class MenuAddDetailActivity extends AppCompatActivity {
         addFood = findViewById(R.id.btnAddAdd);
         cancelFood = findViewById(R.id.btnCancelAdd);
 
+        imageViewAdd.setImageResource(R.drawable.default_image);
         imageViewAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

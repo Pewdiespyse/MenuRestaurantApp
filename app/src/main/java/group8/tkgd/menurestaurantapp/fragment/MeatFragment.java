@@ -20,13 +20,13 @@ import group8.tkgd.menurestaurantapp.model.Dish;
 import group8.tkgd.menurestaurantapp.R;
 import group8.tkgd.menurestaurantapp.adapter.CustomGridviewAdapter;
 
-public class ChickenFragment extends Fragment {
+public class MeatFragment extends Fragment {
     List<Dish> dishes = new ArrayList<>();
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_chicken, container, false);
+        View view = inflater.inflate(R.layout.fragment_meat, container, false);
         GridView gridView = view.findViewById(R.id.gridViewChicken);
 
         dishes.clear();

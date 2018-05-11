@@ -4,7 +4,7 @@
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_fish">Fish</string>
     <string name="title_squid">Squid</string>
-    <string name="title_chicken">Chick</string>
+    <string name="title_meat">Meat</string>
     <string name="title_beer">Beer</string>
     <string name="title_wine">Wine</string>
 
@@ -20,5 +20,5 @@
     <string name="title_activity_login">Login</string>
     <string name="action_order_management">Order Cart</string>
     <string name="action_menu_management">Menu Manager</string>
-    <string name="title_search_result">Food Found</string>
+    <string name="title_search_result">"Wine" Found</string>
 </resources>

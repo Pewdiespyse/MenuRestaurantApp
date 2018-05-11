@@ -3,8 +3,6 @@ package group8.tkgd.menurestaurantapp.activity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -15,7 +13,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -24,7 +21,7 @@ import java.util.List;
 import group8.tkgd.menurestaurantapp.R;
 import group8.tkgd.menurestaurantapp.adapter.SectionsPagerAdapter;
 import group8.tkgd.menurestaurantapp.fragment.BeerFragment;
-import group8.tkgd.menurestaurantapp.fragment.ChickenFragment;
+import group8.tkgd.menurestaurantapp.fragment.MeatFragment;
 import group8.tkgd.menurestaurantapp.fragment.FishFragment;
 import group8.tkgd.menurestaurantapp.fragment.SquidFragment;
 import group8.tkgd.menurestaurantapp.fragment.WineFragment;
@@ -46,7 +43,7 @@ public class MainMenuActivity extends AppCompatActivity {
         // primary sections of the activity.
         Fragment fishFragment = new FishFragment();
         Fragment squidFragment = new SquidFragment();
-        Fragment chickenFragment = new ChickenFragment();
+        Fragment chickenFragment = new MeatFragment();
         Fragment beerFragment = new BeerFragment();
         Fragment wineFragment = new WineFragment();
         fragments.add(fishFragment);
@@ -77,6 +74,23 @@ public class MainMenuActivity extends AppCompatActivity {
             MenuBuilder menuBuilder = (MenuBuilder) menu;
             menuBuilder.setOptionalIconsVisible(true);
         }
+        MenuItem itemSearch = menu.findItem(R.id.item_action_search);
+        SearchView searchView = (SearchView) itemSearch.getActionView();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                Toast.makeText(MainMenuActivity.this, query, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainMenuActivity.this, SearchListActivity.class);
+                intent.putExtra("query", query);
+                startActivity(intent);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
         return true;
     }
 
@@ -90,20 +104,18 @@ public class MainMenuActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         switch (id) {
             case R.id.item_action_search:
-                Intent intent1 = new Intent(MainMenuActivity.this, SearchListActivity.class);
-                startActivity(intent1);
                 break;
             case R.id.item_action_sign_in:
-                Intent intent2 = new Intent(MainMenuActivity.this, LoginActivity.class);
-                startActivity(intent2);
+                Intent intent1 = new Intent(MainMenuActivity.this, LoginActivity.class);
+                startActivity(intent1);
                 break;
             case R.id.item_action_order_management:
-                Intent intent3 = new Intent(MainMenuActivity.this, OrderManagementActivity.class);
-                startActivity(intent3);
+                Intent intent2 = new Intent(MainMenuActivity.this, OrderManagementActivity.class);
+                startActivity(intent2);
                 break;
             case R.id.item_action_menu_management:
-                Intent intent4 = new Intent(MainMenuActivity.this, MenuManagementActivity.class);
-                startActivity(intent4);
+                Intent intent3 = new Intent(MainMenuActivity.this, MenuManagementActivity.class);
+                startActivity(intent3);
                 break;
         }
 

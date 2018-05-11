@@ -29,6 +29,7 @@ public class SearchListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_list);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarSearchList);
+        toolbar.setTitle(getIntent().getStringExtra("query"));
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -41,11 +42,11 @@ public class SearchListActivity extends AppCompatActivity {
         GridView gridView = findViewById(R.id.gridViewSearchList);
 
         dishes.clear();
-        dishes.add(new Dish("Salmon Fish", 10, R.drawable.samon_fish, "Delicious salmon fish."));
-        dishes.add(new Dish("Fried Squid", 15, R.drawable.fried_squid, "Delicious fried squid."));
-        dishes.add(new Dish("Fried Chicken", 20, R.drawable.fried_chicken, "Delicious fried chicken."));
-        dishes.add(new Dish("White Beer", 5, R.drawable.white_beer, "Fantastic white beer."));
-        dishes.add(new Dish("Orange Wine", 8, R.drawable.orange_wine, "Fantastic orange wine."));
+        dishes.add(new Dish("White Wine", 15, R.drawable.white_wine, "Fantastic white wine."));
+        dishes.add(new Dish("Red Wine", 20, R.drawable.red_wine, "Fantastic red wine."));
+        dishes.add(new Dish("Yello Wine", 15, R.drawable.yellow_wine, "Fantastic yellow wine."));
+        dishes.add(new Dish("Orange Wine", 10, R.drawable.orange_wine, "Fantastic orange wine."));
+        dishes.add(new Dish("Pink Wine", 25, R.drawable.pink_wine, "Fantastic pink wine."));
 
         CustomGridviewAdapter customGridviewAdapter = new CustomGridviewAdapter(this, R.layout.custom_search_gridview, dishes);
         customGridviewAdapter.notifyDataSetChanged();
@@ -76,6 +77,7 @@ public class SearchListActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 Toast.makeText(SearchListActivity.this, query, Toast.LENGTH_SHORT).show();
+                getSupportActionBar().setTitle(query);
                 return false;
             }
 
