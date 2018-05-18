@@ -69,6 +69,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <Button
+                android:layout_marginRight="5dp"
                 android:textColor="@color/colorWhite"
                 android:background="@color/colorPrimary"
                 android:id="@+id/btnSubPrice"
@@ -77,6 +78,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <Button
+                android:layout_marginLeft="5dp"
                 android:textColor="@color/colorWhite"
                 android:background="@color/colorPrimary"
                 android:id="@+id/btnAddPrice"
@@ -98,6 +100,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <Button
+                android:layout_marginRight="5dp"
                 android:textColor="@color/colorWhite"
                 android:background="@color/colorPrimary"
                 android:id="@+id/btnCancelAdd"
@@ -111,6 +114,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <Button
+                android:layout_marginLeft="5dp"
                 android:textColor="@color/colorWhite"
                 android:background="@color/colorPrimary"
                 android:id="@+id/btnAddAdd"

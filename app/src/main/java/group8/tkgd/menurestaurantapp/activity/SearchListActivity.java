@@ -1,10 +1,8 @@
 package group8.tkgd.menurestaurantapp.activity;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.view.menu.MenuBuilder;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -19,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import group8.tkgd.menurestaurantapp.R;
-import group8.tkgd.menurestaurantapp.adapter.CustomGridviewAdapter;
+import group8.tkgd.menurestaurantapp.adapter.CustomGridviewMainMenuAdapter;
 import group8.tkgd.menurestaurantapp.model.Dish;
 
 public class SearchListActivity extends AppCompatActivity {
@@ -48,7 +46,7 @@ public class SearchListActivity extends AppCompatActivity {
         dishes.add(new Dish("Orange Wine", 10, R.drawable.orange_wine, "Fantastic orange wine."));
         dishes.add(new Dish("Pink Wine", 25, R.drawable.pink_wine, "Fantastic pink wine."));
 
-        CustomGridviewAdapter customGridviewAdapter = new CustomGridviewAdapter(this, R.layout.custom_search_gridview, dishes);
+        CustomGridviewMainMenuAdapter customGridviewAdapter = new CustomGridviewMainMenuAdapter(this, R.layout.custom_search_gridview, dishes);
         customGridviewAdapter.notifyDataSetChanged();
         gridView.setAdapter(customGridviewAdapter);
 

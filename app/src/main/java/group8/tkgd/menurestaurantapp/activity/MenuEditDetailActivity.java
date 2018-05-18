@@ -16,16 +16,17 @@ import android.widget.Toast;
 import java.io.FileNotFoundException;
 
 import group8.tkgd.menurestaurantapp.R;
+import group8.tkgd.menurestaurantapp.model.Dish;
 
-public class MenuAddDetailActivity extends AppCompatActivity {
+public class MenuEditDetailActivity extends AppCompatActivity {
 
-    private ImageView imageViewAdd;
-    private EditText nameAdd;
-    private TextView priceAdd;
-    private EditText descriptionAdd;
+    private ImageView imageViewEdit;
+    private EditText nameEdit;
+    private TextView priceEdit;
+    private EditText descriptionEdit;
     private Button addPrice;
     private Button subPrice;
-    private Button addFood;
+    private Button editFood;
     private Button cancelFood;
     private int price = 1;
 
@@ -35,31 +36,37 @@ public class MenuAddDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu_add_detail);
+        setContentView(R.layout.activity_menu_edit_detail);
 
-        imageViewAdd = findViewById(R.id.imageAdd);
-        nameAdd = findViewById(R.id.editTextNameAdd);
-        priceAdd = findViewById(R.id.titlePriceAdd);
-        descriptionAdd = findViewById(R.id.editTextDescriptionAdd);
+        imageViewEdit = findViewById(R.id.imageEdit);
+        nameEdit = findViewById(R.id.editTextNameEdit);
+        priceEdit = findViewById(R.id.titlePriceEdit);
+        descriptionEdit = findViewById(R.id.editTextDescriptionEdit);
         addPrice = findViewById(R.id.btnAddPrice);
         subPrice = findViewById(R.id.btnSubPrice);
-        addFood = findViewById(R.id.btnAddAdd);
-        cancelFood = findViewById(R.id.btnCancelAdd);
+        editFood = findViewById(R.id.btnEditEdit);
+        cancelFood = findViewById(R.id.btnCancelEdit);
 
-        priceAdd.setText("" + price);
-        imageViewAdd.setImageResource(R.drawable.default_image);
-        imageViewAdd.setOnClickListener(new View.OnClickListener() {
+        //Get information from editing item
+        Dish dishEdit = new Dish(getIntent().getStringExtra("name"), Integer.parseInt(getIntent().getStringExtra("price")), Integer.parseInt(getIntent().getStringExtra("image")), getIntent().getStringExtra("description"));
+        price = dishEdit.getPrice();
+
+        nameEdit.setText(dishEdit.getName());
+        priceEdit.setText("" + price);
+        imageViewEdit.setImageResource(dishEdit.getImage());
+        imageViewEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 selectImageFromGallery();
             }
         });
+        descriptionEdit.setText(dishEdit.getDescription());
 
         addPrice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 price++;
-                priceAdd.setText("" + price);
+                priceEdit.setText("" + price);
             }
         });
 
@@ -69,23 +76,23 @@ public class MenuAddDetailActivity extends AppCompatActivity {
                 price--;
                 if (price < 1)
                     price = 1;
-                priceAdd.setText("" + price);
+                priceEdit.setText("" + price);
             }
         });
 
-        addFood.setOnClickListener(new View.OnClickListener() {
+        editFood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MenuAddDetailActivity.this, "Add successfully!", Toast.LENGTH_SHORT).show();
-                MenuAddDetailActivity.this.finish();
+                Toast.makeText(MenuEditDetailActivity.this, "Edit successfully!", Toast.LENGTH_SHORT).show();
+                MenuEditDetailActivity.this.finish();
             }
         });
 
         cancelFood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MenuAddDetailActivity.this, "Cancel", Toast.LENGTH_SHORT).show();
-                MenuAddDetailActivity.this.finish();
+                Toast.makeText(MenuEditDetailActivity.this, "Cancel", Toast.LENGTH_SHORT).show();
+                MenuEditDetailActivity.this.finish();
             }
         });
     }
@@ -113,7 +120,7 @@ public class MenuAddDetailActivity extends AppCompatActivity {
                     Uri selectedImage = imageReturnedIntent.getData();
                     try {
                         bitmap = decodeUri(selectedImage);
-                        imageViewAdd.setImageBitmap(bitmap);
+                        imageViewEdit.setImageBitmap(bitmap);
 
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();

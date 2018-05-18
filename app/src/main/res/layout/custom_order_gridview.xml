@@ -57,17 +57,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Button
+            android:layout_marginRight="5dp"
             android:textColor="@color/colorWhite"
             android:background="@color/colorPrimary"
-            android:id="@+id/btnSub"
-            android:layout_toLeftOf="@id/btnAdd"
+            android:id="@+id/btnSubOrder"
+            android:layout_toLeftOf="@id/btnAddOrder"
             android:text="-"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Button
+            android:layout_marginLeft="5dp"
             android:textColor="@color/colorWhite"
             android:background="@color/colorPrimary"
-            android:id="@+id/btnAdd"
+            android:id="@+id/btnAddOrder"
             android:layout_alignParentRight="true"
             android:text="+"
             android:layout_width="wrap_content"

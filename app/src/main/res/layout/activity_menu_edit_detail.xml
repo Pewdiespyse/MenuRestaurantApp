@@ -7,47 +7,46 @@
     tools:context=".activity.DishDetailActivity">
     <android.support.v7.widget.CardView
         android:layout_margin="5dp"
-        android:id="@+id/cardViewDish"
+        android:id="@+id/cardViewImageAdd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <LinearLayout
-            android:orientation="vertical"
+        <ImageView
+            android:id="@+id/imageEdit"
+            android:layout_margin="10dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <ImageView
-                android:id="@+id/imageDishDetail"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_width="match_parent"
-                android:scaleType="centerCrop"
-                android:layout_height="200dp" />
-            <TextView
-                android:layout_margin="10dp"
-                android:id="@+id/titleDishDetail"
-                android:text="Name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <TextView
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="10dp"
-                android:id="@+id/titlePriceDetail"
-                android:text="Price"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <TextView
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="10dp"
-                android:id="@+id/titleDescriptionDetail"
-                android:text="Description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
+            android:scaleType="centerCrop"
+            android:layout_height="200dp" />
     </android.support.v7.widget.CardView>
     <android.support.v7.widget.CardView
-        android:layout_below="@id/cardViewDish"
+        android:layout_below="@id/cardViewImageAdd"
         android:layout_margin="5dp"
-        android:id="@+id/cardViewCount"
+        android:id="@+id/cardViewNameEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:layout_margin="10dp"
+            android:id="@+id/editTextNameEdit"
+            android:hint="Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:layout_below="@id/cardViewNameEdit"
+        android:layout_margin="5dp"
+        android:id="@+id/cardViewDescriptionEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:layout_margin="10dp"
+            android:id="@+id/editTextDescriptionEdit"
+            android:hint="Decription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:layout_below="@id/cardViewDescriptionEdit"
+        android:layout_margin="5dp"
+        android:id="@+id/cardViewPriceEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <RelativeLayout
@@ -61,20 +60,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="Count: " />
+                android:text="Price($): " />
             <TextView
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@id/titleCount"
                 android:text="0"
-                android:id="@+id/titleCountOfDishDetail"
+                android:id="@+id/titlePriceEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <Button
                 android:layout_marginRight="5dp"
                 android:textColor="@color/colorWhite"
                 android:background="@color/colorPrimary"
-                android:id="@+id/btnSubDetail"
-                android:layout_toLeftOf="@id/btnAddDetail"
+                android:id="@+id/btnSubPrice"
+                android:layout_toLeftOf="@id/btnAddPrice"
                 android:text="-"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -82,29 +81,10 @@
                 android:layout_marginLeft="5dp"
                 android:textColor="@color/colorWhite"
                 android:background="@color/colorPrimary"
-                android:id="@+id/btnAddDetail"
+                android:id="@+id/btnAddPrice"
                 android:layout_alignParentRight="true"
                 android:text="+"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </RelativeLayout>
-    </android.support.v7.widget.CardView>
-    <android.support.v7.widget.CardView
-        android:layout_below="@id/cardViewCount"
-        android:layout_margin="5dp"
-        android:id="@+id/cardViewNote"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <RelativeLayout
-            android:layout_margin="10dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <EditText
-                android:id="@+id/editTextNoteDetail"
-                android:hint="Give detail order here"
-                android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </RelativeLayout>
     </android.support.v7.widget.CardView>
@@ -123,7 +103,7 @@
                 android:layout_marginRight="5dp"
                 android:textColor="@color/colorWhite"
                 android:background="@color/colorPrimary"
-                android:id="@+id/btnCancelDetailDish"
+                android:id="@+id/btnCancelEdit"
                 android:layout_alignParentRight="true"
                 android:text="Cancel"
                 android:layout_width="wrap_content"
@@ -137,9 +117,9 @@
                 android:layout_marginLeft="5dp"
                 android:textColor="@color/colorWhite"
                 android:background="@color/colorPrimary"
-                android:id="@+id/btnOrderDetailDish"
+                android:id="@+id/btnEditEdit"
                 android:layout_alignParentLeft="true"
-                android:text="Order"
+                android:text="Edit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </RelativeLayout>

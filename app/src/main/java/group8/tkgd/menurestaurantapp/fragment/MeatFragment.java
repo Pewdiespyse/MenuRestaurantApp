@@ -18,7 +18,7 @@ import java.util.List;
 import group8.tkgd.menurestaurantapp.activity.DishDetailActivity;
 import group8.tkgd.menurestaurantapp.model.Dish;
 import group8.tkgd.menurestaurantapp.R;
-import group8.tkgd.menurestaurantapp.adapter.CustomGridviewAdapter;
+import group8.tkgd.menurestaurantapp.adapter.CustomGridviewMainMenuAdapter;
 
 public class MeatFragment extends Fragment {
     List<Dish> dishes = new ArrayList<>();
@@ -26,7 +26,7 @@ public class MeatFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_meat, container, false);
+        View view = inflater.inflate(R.layout.fragment_chicken, container, false);
         GridView gridView = view.findViewById(R.id.gridViewChicken);
 
         dishes.clear();
@@ -43,7 +43,7 @@ public class MeatFragment extends Fragment {
         dishes.add(new Dish("Fried Chicken", 20, R.drawable.fried_chicken, "Delicious fried chicken."));
         dishes.add(new Dish("Fried Chicken", 20, R.drawable.fried_chicken, "Delicious fried chicken."));
 
-        CustomGridviewAdapter customGridviewAdapter = new CustomGridviewAdapter(getActivity(), R.layout.custom_layout_gridview, dishes);
+        CustomGridviewMainMenuAdapter customGridviewAdapter = new CustomGridviewMainMenuAdapter(getActivity(), R.layout.custom_layout_gridview, dishes);
         customGridviewAdapter.notifyDataSetChanged();
         gridView.setAdapter(customGridviewAdapter);
 

@@ -25,7 +25,7 @@ public class DishDetailActivity extends AppCompatActivity {
     private Button btnSub;
     private Button btnOrder;
     private Button btnCancel;
-    private int count = 0;
+    private int count = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +38,8 @@ public class DishDetailActivity extends AppCompatActivity {
         descriptionDish = findViewById(R.id.titleDescriptionDetail);
         countOfDish = findViewById(R.id.titleCountOfDishDetail);
         noteOfDish = findViewById(R.id.editTextNoteDetail);
-        btnAdd = findViewById(R.id.btnAdd);
-        btnSub = findViewById(R.id.btnSub);
+        btnAdd = findViewById(R.id.btnAddDetail);
+        btnSub = findViewById(R.id.btnSubDetail);
         btnOrder = findViewById(R.id.btnOrderDetailDish);
         btnCancel = findViewById(R.id.btnCancelDetailDish);
 
@@ -49,7 +49,7 @@ public class DishDetailActivity extends AppCompatActivity {
         nameDish.setText(dishDetail.getName());
         priceDish.setText(""+dishDetail.getPrice()+"$");
         descriptionDish.setText(dishDetail.getDescription());
-        countOfDish.setText("0");
+        countOfDish.setText("" + count);
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,8 +62,8 @@ public class DishDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 count--;
-                if (count < 0)
-                    count = 0;
+                if (count < 1)
+                    count = 1;
                 countOfDish.setText("" + count);
             }
         });
@@ -80,7 +80,7 @@ public class DishDetailActivity extends AppCompatActivity {
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplication(), "Order is canceled", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplication(), "Cancel", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(DishDetailActivity.this, MainMenuActivity.class);
                 DishDetailActivity.this.finish();
             }

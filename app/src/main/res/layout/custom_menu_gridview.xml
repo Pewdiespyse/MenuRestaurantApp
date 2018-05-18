@@ -57,17 +57,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Button
+            android:layout_marginRight="5dp"
             android:textColor="@color/colorWhite"
             android:background="@color/colorPrimary"
-            android:id="@+id/btnSub"
-            android:layout_toLeftOf="@id/btnAdd"
+            android:id="@+id/btnDeleteMenu"
+            android:layout_toLeftOf="@id/btnEditMenu"
             android:text="Delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Button
+            android:layout_marginLeft="5dp"
             android:textColor="@color/colorWhite"
             android:background="@color/colorPrimary"
-            android:id="@+id/btnAdd"
+            android:id="@+id/btnEditMenu"
             android:layout_alignParentRight="true"
             android:text="Edit"
             android:layout_width="wrap_content"

@@ -4,7 +4,7 @@
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_fish">Fish</string>
     <string name="title_squid">Squid</string>
-    <string name="title_meat">Meat</string>
+    <string name="title_chicken">Chicken</string>
     <string name="title_beer">Beer</string>
     <string name="title_wine">Wine</string>
 

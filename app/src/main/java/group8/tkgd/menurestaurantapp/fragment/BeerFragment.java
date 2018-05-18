@@ -18,7 +18,7 @@ import java.util.List;
 import group8.tkgd.menurestaurantapp.activity.DishDetailActivity;
 import group8.tkgd.menurestaurantapp.model.Dish;
 import group8.tkgd.menurestaurantapp.R;
-import group8.tkgd.menurestaurantapp.adapter.CustomGridviewAdapter;
+import group8.tkgd.menurestaurantapp.adapter.CustomGridviewMainMenuAdapter;
 
 public class BeerFragment extends Fragment {
     List<Dish> dishes = new ArrayList<>();
@@ -43,7 +43,7 @@ public class BeerFragment extends Fragment {
         dishes.add(new Dish("White Beer", 5, R.drawable.white_beer, "Fantastic white beer."));
         dishes.add(new Dish("White Beer", 5, R.drawable.white_beer, "Fantastic white beer."));
 
-        CustomGridviewAdapter customGridviewAdapter = new CustomGridviewAdapter(getActivity(), R.layout.custom_layout_gridview, dishes);
+        CustomGridviewMainMenuAdapter customGridviewAdapter = new CustomGridviewMainMenuAdapter(getActivity(), R.layout.custom_layout_gridview, dishes);
         customGridviewAdapter.notifyDataSetChanged();
         gridView.setAdapter(customGridviewAdapter);
 

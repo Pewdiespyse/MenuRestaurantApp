@@ -18,7 +18,7 @@ import java.util.List;
 import group8.tkgd.menurestaurantapp.activity.DishDetailActivity;
 import group8.tkgd.menurestaurantapp.model.Dish;
 import group8.tkgd.menurestaurantapp.R;
-import group8.tkgd.menurestaurantapp.adapter.CustomGridviewAdapter;
+import group8.tkgd.menurestaurantapp.adapter.CustomGridviewMainMenuAdapter;
 
 public class FishFragment extends Fragment {
 
@@ -44,7 +44,7 @@ public class FishFragment extends Fragment {
         dishes.add(new Dish("Salmon Fish", 10, R.drawable.samon_fish, "Delicious salmon fish."));
         dishes.add(new Dish("Salmon Fish", 10, R.drawable.samon_fish, "Delicious salmon fish."));
 
-        CustomGridviewAdapter customGridviewAdapter = new CustomGridviewAdapter(getActivity(), R.layout.custom_layout_gridview, dishes);
+        CustomGridviewMainMenuAdapter customGridviewAdapter = new CustomGridviewMainMenuAdapter(getActivity(), R.layout.custom_layout_gridview, dishes);
         customGridviewAdapter.notifyDataSetChanged();
         gridView.setAdapter(customGridviewAdapter);
 

@@ -2,7 +2,6 @@ package group8.tkgd.menurestaurantapp.activity;
 
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -18,7 +17,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import group8.tkgd.menurestaurantapp.R;
-import group8.tkgd.menurestaurantapp.adapter.CustomGridviewAdapter;
+import group8.tkgd.menurestaurantapp.adapter.CustomGridviewMainMenuAdapter;
+import group8.tkgd.menurestaurantapp.adapter.CustomGridviewMenuManagementAdapter;
 import group8.tkgd.menurestaurantapp.model.Dish;
 
 public class MenuManagementActivity extends AppCompatActivity {
@@ -47,7 +47,7 @@ public class MenuManagementActivity extends AppCompatActivity {
         dishes.add(new Dish("White Beer", 5, R.drawable.white_beer, "Fantastic white beer."));
         dishes.add(new Dish("Orange Wine", 8, R.drawable.orange_wine, "Fantastic orange wine."));
 
-        CustomGridviewAdapter customGridviewAdapter = new CustomGridviewAdapter(this, R.layout.custom_menu_gridview, dishes);
+        CustomGridviewMenuManagementAdapter customGridviewAdapter = new CustomGridviewMenuManagementAdapter(this, R.layout.custom_menu_gridview, dishes);
         customGridviewAdapter.notifyDataSetChanged();
         gridView.setAdapter(customGridviewAdapter);
 
