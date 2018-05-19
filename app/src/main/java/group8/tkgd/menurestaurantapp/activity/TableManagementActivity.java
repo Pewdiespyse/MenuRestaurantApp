@@ -3,7 +3,6 @@ package group8.tkgd.menurestaurantapp.activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -17,17 +16,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 import group8.tkgd.menurestaurantapp.R;
-import group8.tkgd.menurestaurantapp.adapter.CustomGridviewMainMenuAdapter;
+import group8.tkgd.menurestaurantapp.adapter.CustomGridviewMenuManagementAdapter;
+import group8.tkgd.menurestaurantapp.adapter.CustomGridviewTableManagementAdapter;
 import group8.tkgd.menurestaurantapp.model.Dish;
+import group8.tkgd.menurestaurantapp.model.Table;
 
-public class SearchListActivity extends AppCompatActivity {
-    List<Dish> dishes = new ArrayList<>();
+public class TableManagementActivity extends AppCompatActivity {
+    List<Table> tables = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search_list);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarSearchList);
-        toolbar.setTitle(getIntent().getStringExtra("query"));
+        setContentView(R.layout.activity_table_management);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarTableManagement);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -37,28 +38,29 @@ public class SearchListActivity extends AppCompatActivity {
             }
         });
 
-        GridView gridView = findViewById(R.id.gridViewSearchList);
+        GridView gridView = findViewById(R.id.gridViewTableManagement);
 
-        dishes.clear();
-        dishes.add(new Dish("White Wine", 15, R.drawable.white_wine, "Fantastic white wine."));
-        dishes.add(new Dish("Red Wine", 20, R.drawable.red_wine, "Fantastic red wine."));
-        dishes.add(new Dish("Yello Wine", 15, R.drawable.yellow_wine, "Fantastic yellow wine."));
-        dishes.add(new Dish("Orange Wine", 10, R.drawable.orange_wine, "Fantastic orange wine."));
-        dishes.add(new Dish("Pink Wine", 25, R.drawable.pink_wine, "Fantastic pink wine."));
+        tables.clear();
+        tables.add(new Table(1, "Serving"));
+        tables.add(new Table(2, "Available"));
+        tables.add(new Table(3, "Serving"));
+        tables.add(new Table(4, "Available"));
+        tables.add(new Table(5, "Serving"));
+        tables.add(new Table(6, "Available"));
+        tables.add(new Table(7, "Serving"));
+        tables.add(new Table(8, "Available"));
+        tables.add(new Table(9, "Serving"));
+        tables.add(new Table(10, "Available"));
 
-        CustomGridviewMainMenuAdapter customGridviewAdapter = new CustomGridviewMainMenuAdapter(this, R.layout.custom_search_gridview, dishes);
+        CustomGridviewTableManagementAdapter customGridviewAdapter = new CustomGridviewTableManagementAdapter(this, R.layout.custom_table_gridview, tables);
         customGridviewAdapter.notifyDataSetChanged();
         gridView.setAdapter(customGridviewAdapter);
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplication(), dishes.get(position).getDescription(), Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(SearchListActivity.this, DishDetailActivity.class);
-                intent.putExtra("image", "" + dishes.get(position).getImage());
-                intent.putExtra("name", "" + dishes.get(position).getName());
-                intent.putExtra("price", "" + dishes.get(position).getPrice());
-                intent.putExtra("description", "" + dishes.get(position).getDescription());
+                Toast.makeText(getApplication(), "Table " + tables.get(position).getNumber() + " is " + tables.get(position).getStatus().toLowerCase(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(TableManagementActivity.this, OrderManagementActivity.class);
                 startActivity(intent);
             }
         });
@@ -68,7 +70,7 @@ public class SearchListActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_search_list,menu);
+        inflater.inflate(R.menu.menu_table_managemet,menu);
         return true;
     }
 

@@ -26,8 +26,9 @@
         <activity android:name=".activity.OrderManagementActivity" />
         <activity android:name=".activity.MenuManagementActivity" />
         <activity android:name=".activity.SearchListActivity" />
-        <activity android:name=".activity.MenuAddDetailActivity"/>
-        <activity android:name=".activity.MenuEditDetailActivity"/>
+        <activity android:name=".activity.MenuAddDetailActivity" />
+        <activity android:name=".activity.MenuEditDetailActivity" />
+        <activity android:name=".activity.TableManagementActivity"></activity>
     </application>
 
 </manifest>

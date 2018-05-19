@@ -117,6 +117,10 @@ public class MainMenuActivity extends AppCompatActivity {
                 Intent intent3 = new Intent(MainMenuActivity.this, MenuManagementActivity.class);
                 startActivity(intent3);
                 break;
+            case R.id.item_action_table_management:
+                Intent intent4 = new Intent(MainMenuActivity.this, TableManagementActivity.class);
+                startActivity(intent4);
+                break;
         }
 
         return super.onOptionsItemSelected(item);
