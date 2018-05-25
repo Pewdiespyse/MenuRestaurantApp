@@ -22,4 +22,5 @@
     <string name="action_menu_management">Menu Manager</string>
     <string name="title_search_result">"Wine" Found</string>
     <string name="action_table_management">Table Management</string>
+    <string name="title_order_now">ORDER NOW</string>
 </resources>

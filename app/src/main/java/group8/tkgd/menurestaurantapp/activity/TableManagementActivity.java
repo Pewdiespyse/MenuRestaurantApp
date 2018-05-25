@@ -42,15 +42,29 @@ public class TableManagementActivity extends AppCompatActivity {
 
         tables.clear();
         tables.add(new Table(1, "Serving"));
-        tables.add(new Table(2, "Available"));
-        tables.add(new Table(3, "Serving"));
+        tables.add(new Table(2, "Serving"));
+        tables.add(new Table(3, "Available"));
         tables.add(new Table(4, "Available"));
-        tables.add(new Table(5, "Serving"));
+        tables.add(new Table(5, "Available"));
         tables.add(new Table(6, "Available"));
         tables.add(new Table(7, "Serving"));
         tables.add(new Table(8, "Available"));
         tables.add(new Table(9, "Serving"));
-        tables.add(new Table(10, "Available"));
+        tables.add(new Table(10, "Serving"));
+        tables.add(new Table(11, "Serving"));
+        tables.add(new Table(12, "Available"));
+        tables.add(new Table(13, "Available"));
+        tables.add(new Table(14, "Available"));
+        tables.add(new Table(15, "Serving"));
+        tables.add(new Table(16, "Serving"));
+        tables.add(new Table(17, "Serving"));
+        tables.add(new Table(18, "Available"));
+        tables.add(new Table(19, "Available"));
+        tables.add(new Table(20, "Available"));
+        tables.add(new Table(21, "Serving"));
+        tables.add(new Table(22, "Serving"));
+        tables.add(new Table(23, "Serving"));
+        tables.add(new Table(24, "Available"));
 
         CustomGridviewTableManagementAdapter customGridviewAdapter = new CustomGridviewTableManagementAdapter(this, R.layout.custom_table_gridview, tables);
         customGridviewAdapter.notifyDataSetChanged();
@@ -59,8 +73,15 @@ public class TableManagementActivity extends AppCompatActivity {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = null;
                 Toast.makeText(getApplication(), "Table " + tables.get(position).getNumber() + " is " + tables.get(position).getStatus().toLowerCase(), Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(TableManagementActivity.this, OrderManagementActivity.class);
+                if (tables.get(position).getStatus() == "Serving") {
+                    intent = new Intent(TableManagementActivity.this, OrderManagementActivity.class);
+                }
+                else if (tables.get(position).getStatus() == "Available") {
+                    intent = new Intent(TableManagementActivity.this, EmptyOrderCartActivity.class);
+                }
+
                 startActivity(intent);
             }
         });

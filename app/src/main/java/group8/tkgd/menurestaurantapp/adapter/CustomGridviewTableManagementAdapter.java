@@ -1,12 +1,13 @@
 package group8.tkgd.menurestaurantapp.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-
 import java.util.List;
 import group8.tkgd.menurestaurantapp.R;
 import group8.tkgd.menurestaurantapp.model.Table;
@@ -46,18 +47,25 @@ public class CustomGridviewTableManagementAdapter extends BaseAdapter {
             ViewHolder holder = new ViewHolder();
             holder.number = viewrow.findViewById(R.id.titleNumberTable);
             holder.status = viewrow.findViewById(R.id.titleStatusTable);
-
+            holder.cardView = viewrow.findViewById(R.id.cardViewTable);
             viewrow.setTag(holder);
         }
 
         ViewHolder holder = (ViewHolder) viewrow.getTag();
         holder.number.setText("" + tables.get(position).getNumber());
         holder.status.setText("" + tables.get(position).getStatus());
+        if (tables.get(position).getStatus() == "Serving") {
+            holder.cardView.setCardBackgroundColor(Color.RED);
+        }
+        else if (tables.get(position).getStatus() == "Available") {
+            holder.cardView.setBackgroundColor(Color.BLUE);
+        }
         return viewrow;
     }
 
     private class ViewHolder {
         TextView number;
         TextView status;
+        CardView cardView;
     }
 }
