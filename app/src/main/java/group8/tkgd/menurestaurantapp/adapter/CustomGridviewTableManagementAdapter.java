@@ -48,18 +48,19 @@ public class CustomGridviewTableManagementAdapter extends BaseAdapter {
             holder.number = viewrow.findViewById(R.id.titleNumberTable);
             holder.status = viewrow.findViewById(R.id.titleStatusTable);
             holder.cardView = viewrow.findViewById(R.id.cardViewTable);
+            if (tables.get(position).getStatus() == "Serving") {
+                holder.cardView.setCardBackgroundColor(Color.rgb(255,92,0));
+            }
+            else if (tables.get(position).getStatus() == "Available") {
+                holder.cardView.setBackgroundColor(Color.rgb(21,171,0));
+            }
             viewrow.setTag(holder);
         }
 
         ViewHolder holder = (ViewHolder) viewrow.getTag();
         holder.number.setText("" + tables.get(position).getNumber());
         holder.status.setText("" + tables.get(position).getStatus());
-        if (tables.get(position).getStatus() == "Serving") {
-            holder.cardView.setCardBackgroundColor(Color.RED);
-        }
-        else if (tables.get(position).getStatus() == "Available") {
-            holder.cardView.setBackgroundColor(Color.BLUE);
-        }
+
         return viewrow;
     }
 

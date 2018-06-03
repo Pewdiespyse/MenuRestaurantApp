@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
     <android.support.v7.widget.CardView
         android:layout_margin="5dp"
-        android:id="@+id/cardViewOrder"
+        android:id="@+id/cardViewPayment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
@@ -14,7 +14,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageDishOrder"
+                android:id="@+id/imageDishPayment"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginLeft="10dp"
@@ -23,14 +23,14 @@
                 android:scaleType="centerCrop" />
             <TextView
                 android:layout_margin="10dp"
-                android:id="@+id/titleDishOrder"
+                android:id="@+id/titleDishPayment"
                 android:text="Name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="10dp"
-                android:id="@+id/titlePriceOrder"
+                android:id="@+id/titlePricePayment"
                 android:text="Price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -41,37 +41,19 @@
         android:layout_margin="10dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="50dp">
 
         <TextView
-            android:id="@+id/titleCountOrder"
+            android:id="@+id/titleCountPayment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:text="Count: " />
         <TextView
             android:layout_centerVertical="true"
-            android:layout_toRightOf="@id/titleCountOrder"
+            android:layout_toRightOf="@id/titleCountPayment"
             android:text="0"
-            android:id="@+id/titleCountOfDishDetailOrder"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <Button
-            android:layout_marginRight="5dp"
-            android:textColor="@color/colorWhite"
-            android:background="@color/colorPrimary"
-            android:id="@+id/btnSubOrder"
-            android:layout_toLeftOf="@id/btnAddOrder"
-            android:text="-"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <Button
-            android:layout_marginLeft="5dp"
-            android:textColor="@color/colorWhite"
-            android:background="@color/colorPrimary"
-            android:id="@+id/btnAddOrder"
-            android:layout_alignParentRight="true"
-            android:text="+"
+            android:id="@+id/titleCountOfDishDetailPayment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </RelativeLayout>

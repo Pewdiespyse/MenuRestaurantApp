@@ -56,15 +56,6 @@ public class TableManagementActivity extends AppCompatActivity {
         tables.add(new Table(13, "Available"));
         tables.add(new Table(14, "Available"));
         tables.add(new Table(15, "Serving"));
-        tables.add(new Table(16, "Serving"));
-        tables.add(new Table(17, "Serving"));
-        tables.add(new Table(18, "Available"));
-        tables.add(new Table(19, "Available"));
-        tables.add(new Table(20, "Available"));
-        tables.add(new Table(21, "Serving"));
-        tables.add(new Table(22, "Serving"));
-        tables.add(new Table(23, "Serving"));
-        tables.add(new Table(24, "Available"));
 
         CustomGridviewTableManagementAdapter customGridviewAdapter = new CustomGridviewTableManagementAdapter(this, R.layout.custom_table_gridview, tables);
         customGridviewAdapter.notifyDataSetChanged();
@@ -76,12 +67,12 @@ public class TableManagementActivity extends AppCompatActivity {
                 Intent intent = null;
                 Toast.makeText(getApplication(), "Table " + tables.get(position).getNumber() + " is " + tables.get(position).getStatus().toLowerCase(), Toast.LENGTH_SHORT).show();
                 if (tables.get(position).getStatus() == "Serving") {
-                    intent = new Intent(TableManagementActivity.this, OrderManagementActivity.class);
+                    intent = new Intent(TableManagementActivity.this, PaymentManagementActivity.class);
                 }
                 else if (tables.get(position).getStatus() == "Available") {
                     intent = new Intent(TableManagementActivity.this, EmptyOrderCartActivity.class);
                 }
-
+                intent.putExtra("tableID", "" + tables.get(position).getNumber());
                 startActivity(intent);
             }
         });

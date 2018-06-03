@@ -20,16 +20,18 @@ import java.util.List;
 
 import group8.tkgd.menurestaurantapp.R;
 import group8.tkgd.menurestaurantapp.adapter.CustomGridviewOrderManagementAdapter;
+import group8.tkgd.menurestaurantapp.adapter.CustomGridviewPaymentManagementAdapter;
 import group8.tkgd.menurestaurantapp.model.Dish;
 
-public class OrderManagementActivity extends AppCompatActivity {
+public class PaymentManagementActivity extends AppCompatActivity {
 
     List<Dish> dishes = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_order_management);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarOrderManagement);
+        setContentView(R.layout.activity_payment_management);
+        Toolbar toolbar = findViewById(R.id.toolbarPaymentManagement);
+        toolbar.setTitle("Table " + getIntent().getStringExtra("tableID"));
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -39,7 +41,7 @@ public class OrderManagementActivity extends AppCompatActivity {
             }
         });
 
-        GridView gridView = findViewById(R.id.gridViewOrderManagement);
+        GridView gridView = findViewById(R.id.gridViewPaymentManagement);
 
         dishes.clear();
         dishes.add(new Dish("Salmon Fish", 10, R.drawable.samon_fish, "Delicious salmon fish."));
@@ -48,7 +50,7 @@ public class OrderManagementActivity extends AppCompatActivity {
         dishes.add(new Dish("White Beer", 5, R.drawable.white_beer, "Fantastic white beer."));
         dishes.add(new Dish("Orange Wine", 8, R.drawable.orange_wine, "Fantastic orange wine."));
 
-        CustomGridviewOrderManagementAdapter customGridviewAdapter = new CustomGridviewOrderManagementAdapter(this, R.layout.custom_order_gridview, dishes);
+        CustomGridviewPaymentManagementAdapter customGridviewAdapter = new CustomGridviewPaymentManagementAdapter(this, R.layout.custom_payment_gridview, dishes);
         customGridviewAdapter.notifyDataSetChanged();
         gridView.setAdapter(customGridviewAdapter);
 
@@ -56,28 +58,21 @@ public class OrderManagementActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(getApplication(), dishes.get(position).getDescription(), Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(OrderManagementActivity.this, DishDetailActivity.class);
-                intent.putExtra("image", "" + dishes.get(position).getImage());
-                intent.putExtra("name", "" + dishes.get(position).getName());
-                intent.putExtra("price", "" + dishes.get(position).getPrice());
-                intent.putExtra("description", "" + dishes.get(position).getDescription());
-                startActivity(intent);
             }
         });
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabOrder);
+        FloatingActionButton fab = findViewById(R.id.fabPayment);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                AlertDialog alertDialog = new AlertDialog.Builder(OrderManagementActivity.this)
+                AlertDialog alertDialog = new AlertDialog.Builder(PaymentManagementActivity.this)
                         .setTitle("Confirmation")
-                        .setMessage("Are you sure you want to order?")
+                        .setMessage("Are you sure you want to pay?")
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                Toast.makeText(OrderManagementActivity.this, "Order Successfully!", Toast.LENGTH_SHORT).show();
-                                OrderManagementActivity.this.finish();
+                                Toast.makeText(PaymentManagementActivity.this, "Pay Successfully!", Toast.LENGTH_SHORT).show();
+                                PaymentManagementActivity.this.finish();
                             }
                         })
                         .setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -88,7 +83,6 @@ public class OrderManagementActivity extends AppCompatActivity {
                         })
                         .setIcon(R.drawable.ic_action_order_management)
                         .show();
-
             }
         });
     }
@@ -97,7 +91,7 @@ public class OrderManagementActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_order_management,menu);
+        inflater.inflate(R.menu.menu_payment_management,menu);
         return true;
     }
 

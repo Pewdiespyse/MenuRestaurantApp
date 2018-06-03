@@ -28,6 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <Button
+            android:layout_margin="50dp"
             android:id="@+id/btnOrderNow"
             android:padding="10dp"
             android:textColor="@color/colorWhite"
@@ -35,7 +36,7 @@
             android:layout_centerHorizontal="true"
             android:background="@color/colorPrimary"
             android:text="@string/title_order_now"
-            android:textSize="50sp"
+            android:textSize="30sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </RelativeLayout>

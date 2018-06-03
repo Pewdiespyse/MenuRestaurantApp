@@ -1,7 +1,9 @@
 package group8.tkgd.menurestaurantapp.adapter;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,10 +14,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
+import java.util.zip.CheckedOutputStream;
 
 import group8.tkgd.menurestaurantapp.activity.DishDetailActivity;
 import group8.tkgd.menurestaurantapp.activity.MenuEditDetailActivity;
 import group8.tkgd.menurestaurantapp.activity.MenuManagementActivity;
+import group8.tkgd.menurestaurantapp.activity.OrderManagementActivity;
 import group8.tkgd.menurestaurantapp.model.Dish;
 import group8.tkgd.menurestaurantapp.R;
 
@@ -80,9 +84,26 @@ public class CustomGridviewMenuManagementAdapter extends BaseAdapter {
         holder.btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "Delete " + dishes.get(position).getName(),  Toast.LENGTH_SHORT).show();
-                dishes.remove(position);
-                notifyDataSetChanged();
+                    AlertDialog alertDialog = new AlertDialog.Builder(context)
+                        .setTitle("Confirmation")
+                        .setMessage("Are you sure you want to delete?")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Toast.makeText(context, "Delete " + dishes.get(position).getName(),  Toast.LENGTH_SHORT).show();
+                                dishes.remove(position);
+                                notifyDataSetChanged();
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        })
+                        .setIcon(R.drawable.ic_action_menu_management)
+                        .show();
+
             }
         });
         return viewrow;

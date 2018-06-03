@@ -29,7 +29,8 @@
         <activity android:name=".activity.MenuAddDetailActivity" />
         <activity android:name=".activity.MenuEditDetailActivity" />
         <activity android:name=".activity.TableManagementActivity" />
-        <activity android:name=".activity.EmptyOrderCartActivity"></activity>
+        <activity android:name=".activity.EmptyOrderCartActivity" />
+        <activity android:name=".activity.PaymentManagementActivity"></activity>
     </application>
 
 </manifest>

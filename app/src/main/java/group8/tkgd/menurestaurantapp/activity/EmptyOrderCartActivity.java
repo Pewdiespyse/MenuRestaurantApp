@@ -1,5 +1,6 @@
 package group8.tkgd.menurestaurantapp.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,6 +20,7 @@ public class EmptyOrderCartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_empty_order_cart);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarEmptyOrderCart);
+        toolbar.setTitle("Table " + getIntent().getStringExtra("tableID"));
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -32,8 +34,8 @@ public class EmptyOrderCartActivity extends AppCompatActivity {
         btnOrderNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressed();
-                Toast.makeText(getApplication(), "Press back to order", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(EmptyOrderCartActivity.this, MainMenuActivity.class);
+                startActivity(intent);
             }
         });
     }
