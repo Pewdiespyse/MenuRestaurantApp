@@ -43,7 +43,7 @@ public class DishDetailActivity extends AppCompatActivity {
         btnOrder = findViewById(R.id.btnOrderDetailDish);
         btnCancel = findViewById(R.id.btnCancelDetailDish);
 
-        Dish dishDetail = new Dish(getIntent().getStringExtra("name"), Integer.parseInt(getIntent().getStringExtra("price")), Integer.parseInt(getIntent().getStringExtra("image")), getIntent().getStringExtra("description"));
+        Dish dishDetail = new Dish(getIntent().getStringExtra("name"), Integer.parseInt(getIntent().getStringExtra("price")), Integer.parseInt(getIntent().getStringExtra("image")), Integer.parseInt(getIntent().getStringExtra("rate")),getIntent().getStringExtra("description"));
 
         imageDish.setImageResource(dishDetail.getImage());
         nameDish.setText(dishDetail.getName());

@@ -1,6 +1,9 @@
 package group8.tkgd.menurestaurantapp.activity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -38,7 +41,7 @@ public class TableManagementActivity extends AppCompatActivity {
             }
         });
 
-        GridView gridView = findViewById(R.id.gridViewTableManagement);
+        final GridView gridView = findViewById(R.id.gridViewTableManagement);
 
         tables.clear();
         tables.add(new Table(1, "Serving"));
@@ -57,7 +60,7 @@ public class TableManagementActivity extends AppCompatActivity {
         tables.add(new Table(14, "Available"));
         tables.add(new Table(15, "Serving"));
 
-        CustomGridviewTableManagementAdapter customGridviewAdapter = new CustomGridviewTableManagementAdapter(this, R.layout.custom_table_gridview, tables);
+        final CustomGridviewTableManagementAdapter customGridviewAdapter = new CustomGridviewTableManagementAdapter(this, R.layout.custom_table_gridview, tables);
         customGridviewAdapter.notifyDataSetChanged();
         gridView.setAdapter(customGridviewAdapter);
 
@@ -74,6 +77,32 @@ public class TableManagementActivity extends AppCompatActivity {
                 }
                 intent.putExtra("tableID", "" + tables.get(position).getNumber());
                 startActivity(intent);
+            }
+        });
+
+        FloatingActionButton fab = findViewById(R.id.fabAddTable);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog alertDialog = new AlertDialog.Builder(TableManagementActivity.this)
+                        .setTitle("Confirmation")
+                        .setMessage("Are you sure you want to add a table?")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Toast.makeText(TableManagementActivity.this, "Add Successfully!", Toast.LENGTH_SHORT).show();
+                                tables.add(new Table(tables.size() + 1, "Available"));
+                                customGridviewAdapter.notifyDataSetChanged();
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        })
+                        .setIcon(R.drawable.ic_action_order_management)
+                        .show();
             }
         });
     }

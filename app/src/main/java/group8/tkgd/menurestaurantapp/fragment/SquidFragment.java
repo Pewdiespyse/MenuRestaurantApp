@@ -30,18 +30,18 @@ public class SquidFragment extends Fragment {
         GridView gridView = view.findViewById(R.id.gridViewSquid);
 
         dishes.clear();
-        dishes.add(new Dish("Fried Squid", 15, R.drawable.fried_squid, "Delicious fried squid."));
-        dishes.add(new Dish("Fried Squid", 15, R.drawable.fried_squid, "Delicious fried squid."));
-        dishes.add(new Dish("Fried Squid", 15, R.drawable.fried_squid, "Delicious fried squid."));
-        dishes.add(new Dish("Fried Squid", 15, R.drawable.fried_squid, "Delicious fried squid."));
-        dishes.add(new Dish("Fried Squid", 15, R.drawable.fried_squid, "Delicious fried squid."));
-        dishes.add(new Dish("Fried Squid", 15, R.drawable.fried_squid, "Delicious fried squid."));
-        dishes.add(new Dish("Fried Squid", 15, R.drawable.fried_squid, "Delicious fried squid."));
-        dishes.add(new Dish("Fried Squid", 15, R.drawable.fried_squid, "Delicious fried squid."));
-        dishes.add(new Dish("Fried Squid", 15, R.drawable.fried_squid, "Delicious fried squid."));
-        dishes.add(new Dish("Fried Squid", 15, R.drawable.fried_squid, "Delicious fried squid."));
-        dishes.add(new Dish("Fried Squid", 15, R.drawable.fried_squid, "Delicious fried squid."));
-        dishes.add(new Dish("Fried Squid", 15, R.drawable.fried_squid, "Delicious fried squid."));
+        dishes.add(new Dish("Fried Squid", 15, R.drawable.fried_squid, 5, "Delicious fried squid."));
+        dishes.add(new Dish("Fried Squid", 15, R.drawable.fried_squid, 5, "Delicious fried squid."));
+        dishes.add(new Dish("Fried Squid", 15, R.drawable.fried_squid, 5, "Delicious fried squid."));
+        dishes.add(new Dish("Fried Squid", 15, R.drawable.fried_squid, 5, "Delicious fried squid."));
+        dishes.add(new Dish("Fried Squid", 15, R.drawable.fried_squid, 5, "Delicious fried squid."));
+        dishes.add(new Dish("Fried Squid", 15, R.drawable.fried_squid, 5, "Delicious fried squid."));
+        dishes.add(new Dish("Fried Squid", 15, R.drawable.fried_squid, 5, "Delicious fried squid."));
+        dishes.add(new Dish("Fried Squid", 15, R.drawable.fried_squid, 5, "Delicious fried squid."));
+        dishes.add(new Dish("Fried Squid", 15, R.drawable.fried_squid, 5, "Delicious fried squid."));
+        dishes.add(new Dish("Fried Squid", 15, R.drawable.fried_squid, 5, "Delicious fried squid."));
+        dishes.add(new Dish("Fried Squid", 15, R.drawable.fried_squid, 5, "Delicious fried squid."));
+        dishes.add(new Dish("Fried Squid", 15, R.drawable.fried_squid, 5, "Delicious fried squid."));
 
         CustomGridviewMainMenuAdapter customGridviewAdapter = new CustomGridviewMainMenuAdapter(getActivity(), R.layout.custom_layout_gridview, dishes);
         customGridviewAdapter.notifyDataSetChanged();
@@ -55,6 +55,7 @@ public class SquidFragment extends Fragment {
                 intent.putExtra("image", "" + dishes.get(position).getImage());
                 intent.putExtra("name", "" + dishes.get(position).getName());
                 intent.putExtra("price", ""+dishes.get(position).getPrice());
+                intent.putExtra("rate", "" + dishes.get(position).getRate());
                 intent.putExtra("description", "" + dishes.get(position).getDescription());
                 startActivity(intent);
 

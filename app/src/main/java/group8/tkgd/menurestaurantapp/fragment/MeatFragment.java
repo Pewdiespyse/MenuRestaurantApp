@@ -30,18 +30,18 @@ public class MeatFragment extends Fragment {
         GridView gridView = view.findViewById(R.id.gridViewChicken);
 
         dishes.clear();
-        dishes.add(new Dish("Fried Chicken", 20, R.drawable.fried_chicken, "Delicious fried chicken."));
-        dishes.add(new Dish("Fried Chicken", 20, R.drawable.fried_chicken, "Delicious fried chicken."));
-        dishes.add(new Dish("Fried Chicken", 20, R.drawable.fried_chicken, "Delicious fried chicken."));
-        dishes.add(new Dish("Fried Chicken", 20, R.drawable.fried_chicken, "Delicious fried chicken."));
-        dishes.add(new Dish("Fried Chicken", 20, R.drawable.fried_chicken, "Delicious fried chicken."));
-        dishes.add(new Dish("Fried Chicken", 20, R.drawable.fried_chicken, "Delicious fried chicken."));
-        dishes.add(new Dish("Fried Chicken", 20, R.drawable.fried_chicken, "Delicious fried chicken."));
-        dishes.add(new Dish("Fried Chicken", 20, R.drawable.fried_chicken, "Delicious fried chicken."));
-        dishes.add(new Dish("Fried Chicken", 20, R.drawable.fried_chicken, "Delicious fried chicken."));
-        dishes.add(new Dish("Fried Chicken", 20, R.drawable.fried_chicken, "Delicious fried chicken."));
-        dishes.add(new Dish("Fried Chicken", 20, R.drawable.fried_chicken, "Delicious fried chicken."));
-        dishes.add(new Dish("Fried Chicken", 20, R.drawable.fried_chicken, "Delicious fried chicken."));
+        dishes.add(new Dish("Fried Chicken", 20, R.drawable.fried_chicken, 5, "Delicious fried chicken."));
+        dishes.add(new Dish("Fried Chicken", 20, R.drawable.fried_chicken, 5, "Delicious fried chicken."));
+        dishes.add(new Dish("Fried Chicken", 20, R.drawable.fried_chicken, 5, "Delicious fried chicken."));
+        dishes.add(new Dish("Fried Chicken", 20, R.drawable.fried_chicken, 5, "Delicious fried chicken."));
+        dishes.add(new Dish("Fried Chicken", 20, R.drawable.fried_chicken, 5, "Delicious fried chicken."));
+        dishes.add(new Dish("Fried Chicken", 20, R.drawable.fried_chicken, 5, "Delicious fried chicken."));
+        dishes.add(new Dish("Fried Chicken", 20, R.drawable.fried_chicken, 5, "Delicious fried chicken."));
+        dishes.add(new Dish("Fried Chicken", 20, R.drawable.fried_chicken, 5, "Delicious fried chicken."));
+        dishes.add(new Dish("Fried Chicken", 20, R.drawable.fried_chicken, 5, "Delicious fried chicken."));
+        dishes.add(new Dish("Fried Chicken", 20, R.drawable.fried_chicken, 5, "Delicious fried chicken."));
+        dishes.add(new Dish("Fried Chicken", 20, R.drawable.fried_chicken, 5, "Delicious fried chicken."));
+        dishes.add(new Dish("Fried Chicken", 20, R.drawable.fried_chicken, 5, "Delicious fried chicken."));
 
         CustomGridviewMainMenuAdapter customGridviewAdapter = new CustomGridviewMainMenuAdapter(getActivity(), R.layout.custom_layout_gridview, dishes);
         customGridviewAdapter.notifyDataSetChanged();
@@ -55,6 +55,7 @@ public class MeatFragment extends Fragment {
                 intent.putExtra("image", "" + dishes.get(position).getImage());
                 intent.putExtra("name", "" + dishes.get(position).getName());
                 intent.putExtra("price", ""+dishes.get(position).getPrice());
+                intent.putExtra("rate", "" + dishes.get(position).getRate());
                 intent.putExtra("description", "" + dishes.get(position).getDescription());
                 startActivity(intent);
 

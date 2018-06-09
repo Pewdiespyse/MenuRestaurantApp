@@ -40,11 +40,11 @@ public class SearchListActivity extends AppCompatActivity {
         GridView gridView = findViewById(R.id.gridViewSearchList);
 
         dishes.clear();
-        dishes.add(new Dish("White Wine", 15, R.drawable.white_wine, "Fantastic white wine."));
-        dishes.add(new Dish("Red Wine", 20, R.drawable.red_wine, "Fantastic red wine."));
-        dishes.add(new Dish("Yello Wine", 15, R.drawable.yellow_wine, "Fantastic yellow wine."));
-        dishes.add(new Dish("Orange Wine", 10, R.drawable.orange_wine, "Fantastic orange wine."));
-        dishes.add(new Dish("Pink Wine", 25, R.drawable.pink_wine, "Fantastic pink wine."));
+        dishes.add(new Dish("White Wine", 15, R.drawable.white_wine, 4,"Fantastic white wine."));
+        dishes.add(new Dish("Red Wine", 20, R.drawable.red_wine, 4, "Fantastic red wine."));
+        dishes.add(new Dish("Yello Wine", 15, R.drawable.yellow_wine, 4, "Fantastic yellow wine."));
+        dishes.add(new Dish("Orange Wine", 10, R.drawable.orange_wine, 4, "Fantastic orange wine."));
+        dishes.add(new Dish("Pink Wine", 25, R.drawable.pink_wine, 4, "Fantastic pink wine."));
 
         CustomGridviewMainMenuAdapter customGridviewAdapter = new CustomGridviewMainMenuAdapter(this, R.layout.custom_search_gridview, dishes);
         customGridviewAdapter.notifyDataSetChanged();

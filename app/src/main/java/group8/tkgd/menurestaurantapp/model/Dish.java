@@ -5,7 +5,16 @@ public class Dish {
     private String name;
     private int price;
     private int image;
+    private int rate;
     private String description;
+
+    public int getRate() {
+        return rate;
+    }
+
+    public void setRate(int rate) {
+        this.rate = rate;
+    }
 
     public int getImage() {
         return image;
@@ -39,10 +48,11 @@ public class Dish {
         this.description = description;
     }
 
-    public Dish(String name, int price, int image, String description) {
+    public Dish(String name, int price, int image, int rate, String description) {
         this.name = name;
         this.price = price;
         this.image = image;
+        this.rate = rate;
         this.description = description;
     }
 }

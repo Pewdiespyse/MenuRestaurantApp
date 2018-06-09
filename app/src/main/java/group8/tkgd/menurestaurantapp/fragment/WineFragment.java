@@ -30,18 +30,18 @@ public class WineFragment extends Fragment {
         GridView gridView = view.findViewById(R.id.gridViewWine);
 
         dishes.clear();
-        dishes.add(new Dish("Orange Wine", 8, R.drawable.orange_wine, "Fantastic orange wine."));
-        dishes.add(new Dish("Orange Wine", 8, R.drawable.orange_wine, "Fantastic orange wine."));
-        dishes.add(new Dish("Orange Wine", 8, R.drawable.orange_wine, "Fantastic orange wine."));
-        dishes.add(new Dish("Orange Wine", 8, R.drawable.orange_wine, "Fantastic orange wine."));
-        dishes.add(new Dish("Orange Wine", 8, R.drawable.orange_wine, "Fantastic orange wine."));
-        dishes.add(new Dish("Orange Wine", 8, R.drawable.orange_wine, "Fantastic orange wine."));
-        dishes.add(new Dish("Orange Wine", 8, R.drawable.orange_wine, "Fantastic orange wine."));
-        dishes.add(new Dish("Orange Wine", 8, R.drawable.orange_wine, "Fantastic orange wine."));
-        dishes.add(new Dish("Orange Wine", 8, R.drawable.orange_wine, "Fantastic orange wine."));
-        dishes.add(new Dish("Orange Wine", 8, R.drawable.orange_wine, "Fantastic orange wine."));
-        dishes.add(new Dish("Orange Wine", 8, R.drawable.orange_wine, "Fantastic orange wine."));
-        dishes.add(new Dish("Orange Wine", 8, R.drawable.orange_wine, "Fantastic orange wine."));
+        dishes.add(new Dish("Orange Wine", 8, R.drawable.orange_wine, 4,"Fantastic orange wine."));
+        dishes.add(new Dish("Orange Wine", 8, R.drawable.orange_wine, 4, "Fantastic orange wine."));
+        dishes.add(new Dish("Orange Wine", 8, R.drawable.orange_wine, 4, "Fantastic orange wine."));
+        dishes.add(new Dish("Orange Wine", 8, R.drawable.orange_wine, 4,"Fantastic orange wine."));
+        dishes.add(new Dish("Orange Wine", 8, R.drawable.orange_wine, 4, "Fantastic orange wine."));
+        dishes.add(new Dish("Orange Wine", 8, R.drawable.orange_wine, 4, "Fantastic orange wine."));
+        dishes.add(new Dish("Orange Wine", 8, R.drawable.orange_wine, 4,"Fantastic orange wine."));
+        dishes.add(new Dish("Orange Wine", 8, R.drawable.orange_wine, 4, "Fantastic orange wine."));
+        dishes.add(new Dish("Orange Wine", 8, R.drawable.orange_wine, 4, "Fantastic orange wine."));
+        dishes.add(new Dish("Orange Wine", 8, R.drawable.orange_wine, 4,"Fantastic orange wine."));
+        dishes.add(new Dish("Orange Wine", 8, R.drawable.orange_wine, 4, "Fantastic orange wine."));
+        dishes.add(new Dish("Orange Wine", 8, R.drawable.orange_wine, 4, "Fantastic orange wine."));
 
         CustomGridviewMainMenuAdapter customGridviewAdapter = new CustomGridviewMainMenuAdapter(getActivity(), R.layout.custom_layout_gridview, dishes);
         customGridviewAdapter.notifyDataSetChanged();
@@ -55,6 +55,7 @@ public class WineFragment extends Fragment {
                 intent.putExtra("image", "" + dishes.get(position).getImage());
                 intent.putExtra("name", "" + dishes.get(position).getName());
                 intent.putExtra("price", ""+dishes.get(position).getPrice());
+                intent.putExtra("rate", "" + dishes.get(position).getRate());
                 intent.putExtra("description", "" + dishes.get(position).getDescription());
                 startActivity(intent);
 

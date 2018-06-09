@@ -44,11 +44,11 @@ public class PaymentManagementActivity extends AppCompatActivity {
         GridView gridView = findViewById(R.id.gridViewPaymentManagement);
 
         dishes.clear();
-        dishes.add(new Dish("Salmon Fish", 10, R.drawable.samon_fish, "Delicious salmon fish."));
-        dishes.add(new Dish("Fried Squid", 15, R.drawable.fried_squid, "Delicious fried squid."));
-        dishes.add(new Dish("Fried Chicken", 20, R.drawable.fried_chicken, "Delicious fried chicken."));
-        dishes.add(new Dish("White Beer", 5, R.drawable.white_beer, "Fantastic white beer."));
-        dishes.add(new Dish("Orange Wine", 8, R.drawable.orange_wine, "Fantastic orange wine."));
+        dishes.add(new Dish("Salmon Fish", 10, R.drawable.samon_fish, 3, "Delicious salmon fish."));
+        dishes.add(new Dish("Fried Squid", 15, R.drawable.fried_squid, 5, "Delicious fried squid."));
+        dishes.add(new Dish("Fried Chicken", 20, R.drawable.fried_chicken, 5, "Delicious fried chicken."));
+        dishes.add(new Dish("White Beer", 5, R.drawable.white_beer, 4, "Fantastic white beer."));
+        dishes.add(new Dish("Orange Wine", 8, R.drawable.orange_wine, 4, "Fantastic orange wine."));
 
         CustomGridviewPaymentManagementAdapter customGridviewAdapter = new CustomGridviewPaymentManagementAdapter(this, R.layout.custom_payment_gridview, dishes);
         customGridviewAdapter.notifyDataSetChanged();

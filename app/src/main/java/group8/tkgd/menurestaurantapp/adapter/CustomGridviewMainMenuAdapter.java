@@ -50,6 +50,7 @@ public class CustomGridviewMainMenuAdapter extends BaseAdapter {
             holder.image = viewrow.findViewById(R.id.imageDish);
             holder.name = viewrow.findViewById(R.id.titleDish);
             holder.price = viewrow.findViewById(R.id.titlePrice);
+            holder.rate = viewrow.findViewById(R.id.titleRate);
 
             viewrow.setTag(holder);
         }
@@ -58,6 +59,7 @@ public class CustomGridviewMainMenuAdapter extends BaseAdapter {
         holder.image.setImageResource(dishes.get(position).getImage());
         holder.name.setText(dishes.get(position).getName());
         holder.price.setText("" + dishes.get(position).getPrice() + "$");
+        holder.rate.setText("" + dishes.get(position).getRate());
         return viewrow;
     }
 
@@ -65,6 +67,7 @@ public class CustomGridviewMainMenuAdapter extends BaseAdapter {
         ImageView image;
         TextView name;
         TextView price;
+        TextView rate;
     }
 
 }

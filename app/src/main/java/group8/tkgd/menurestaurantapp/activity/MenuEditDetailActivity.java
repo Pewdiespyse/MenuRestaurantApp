@@ -48,7 +48,7 @@ public class MenuEditDetailActivity extends AppCompatActivity {
         cancelFood = findViewById(R.id.btnCancelEdit);
 
         //Get information from editing item
-        Dish dishEdit = new Dish(getIntent().getStringExtra("name"), Integer.parseInt(getIntent().getStringExtra("price")), Integer.parseInt(getIntent().getStringExtra("image")), getIntent().getStringExtra("description"));
+        Dish dishEdit = new Dish(getIntent().getStringExtra("name"), Integer.parseInt(getIntent().getStringExtra("price")), Integer.parseInt(getIntent().getStringExtra("image")),Integer.parseInt(getIntent().getStringExtra("rate")),  getIntent().getStringExtra("description"));
         price = dishEdit.getPrice();
 
         nameEdit.setText(dishEdit.getName());

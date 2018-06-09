@@ -31,18 +31,18 @@ public class FishFragment extends Fragment {
         GridView gridView = view.findViewById(R.id.gridViewFish);
 
         dishes.clear();
-        dishes.add(new Dish("Salmon Fish", 10, R.drawable.samon_fish, "Delicious salmon fish."));
-        dishes.add(new Dish("Salmon Fish", 10, R.drawable.samon_fish, "Delicious salmon fish."));
-        dishes.add(new Dish("Salmon Fish", 10, R.drawable.samon_fish, "Delicious salmon fish."));
-        dishes.add(new Dish("Salmon Fish", 10, R.drawable.samon_fish, "Delicious salmon fish."));
-        dishes.add(new Dish("Salmon Fish", 10, R.drawable.samon_fish, "Delicious salmon fish."));
-        dishes.add(new Dish("Salmon Fish", 10, R.drawable.samon_fish, "Delicious salmon fish."));
-        dishes.add(new Dish("Salmon Fish", 10, R.drawable.samon_fish, "Delicious salmon fish."));
-        dishes.add(new Dish("Salmon Fish", 10, R.drawable.samon_fish, "Delicious salmon fish."));
-        dishes.add(new Dish("Salmon Fish", 10, R.drawable.samon_fish, "Delicious salmon fish."));
-        dishes.add(new Dish("Salmon Fish", 10, R.drawable.samon_fish, "Delicious salmon fish."));
-        dishes.add(new Dish("Salmon Fish", 10, R.drawable.samon_fish, "Delicious salmon fish."));
-        dishes.add(new Dish("Salmon Fish", 10, R.drawable.samon_fish, "Delicious salmon fish."));
+        dishes.add(new Dish("Salmon Fish", 10, R.drawable.samon_fish, 3, "Delicious salmon fish."));
+        dishes.add(new Dish("Salmon Fish", 10, R.drawable.samon_fish, 3, "Delicious salmon fish."));
+        dishes.add(new Dish("Salmon Fish", 10, R.drawable.samon_fish, 3, "Delicious salmon fish."));
+        dishes.add(new Dish("Salmon Fish", 10, R.drawable.samon_fish, 3, "Delicious salmon fish."));
+        dishes.add(new Dish("Salmon Fish", 10, R.drawable.samon_fish, 3, "Delicious salmon fish."));
+        dishes.add(new Dish("Salmon Fish", 10, R.drawable.samon_fish, 3, "Delicious salmon fish."));
+        dishes.add(new Dish("Salmon Fish", 10, R.drawable.samon_fish, 3, "Delicious salmon fish."));
+        dishes.add(new Dish("Salmon Fish", 10, R.drawable.samon_fish, 3, "Delicious salmon fish."));
+        dishes.add(new Dish("Salmon Fish", 10, R.drawable.samon_fish, 3, "Delicious salmon fish."));
+        dishes.add(new Dish("Salmon Fish", 10, R.drawable.samon_fish, 3, "Delicious salmon fish."));
+        dishes.add(new Dish("Salmon Fish", 10, R.drawable.samon_fish, 3, "Delicious salmon fish."));
+        dishes.add(new Dish("Salmon Fish", 10, R.drawable.samon_fish, 3, "Delicious salmon fish."));
 
         CustomGridviewMainMenuAdapter customGridviewAdapter = new CustomGridviewMainMenuAdapter(getActivity(), R.layout.custom_layout_gridview, dishes);
         customGridviewAdapter.notifyDataSetChanged();
@@ -56,6 +56,7 @@ public class FishFragment extends Fragment {
                 intent.putExtra("image", "" + dishes.get(position).getImage());
                 intent.putExtra("name", "" + dishes.get(position).getName());
                 intent.putExtra("price", ""+dishes.get(position).getPrice());
+                intent.putExtra("rate", "" + dishes.get(position).getRate());
                 intent.putExtra("description", "" + dishes.get(position).getDescription());
                 startActivity(intent);
 
