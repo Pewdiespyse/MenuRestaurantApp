@@ -50,6 +50,7 @@ public class CustomGridviewOrderManagementAdapter extends BaseAdapter {
             holder.image = viewrow.findViewById(R.id.imageDishOrder);
             holder.name = viewrow.findViewById(R.id.titleDishOrder);
             holder.price = viewrow.findViewById(R.id.titlePriceOrder);
+            holder.rate = viewrow.findViewById(R.id.titleRateOrder);
             holder.btnAdd = viewrow.findViewById(R.id.btnAddOrder);
             holder.btnSub = viewrow.findViewById(R.id.btnSubOrder);
             holder.countOfDish = viewrow.findViewById(R.id.titleCountOfDishDetailOrder);
@@ -61,6 +62,7 @@ public class CustomGridviewOrderManagementAdapter extends BaseAdapter {
         holder.image.setImageResource(dishes.get(position).getImage());
         holder.name.setText(dishes.get(position).getName());
         holder.price.setText("" + dishes.get(position).getPrice() + "$");
+        holder.rate.setText("" + dishes.get(position).getRate());
         holder.countOfDish.setText("" + holder.count);
         holder.btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,6 +87,7 @@ public class CustomGridviewOrderManagementAdapter extends BaseAdapter {
         ImageView image;
         TextView name;
         TextView price;
+        TextView rate;
         TextView countOfDish;
         Button btnAdd;
         Button btnSub;

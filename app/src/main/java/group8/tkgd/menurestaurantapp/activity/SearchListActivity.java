@@ -58,6 +58,7 @@ public class SearchListActivity extends AppCompatActivity {
                 intent.putExtra("image", "" + dishes.get(position).getImage());
                 intent.putExtra("name", "" + dishes.get(position).getName());
                 intent.putExtra("price", "" + dishes.get(position).getPrice());
+                intent.putExtra("rate", "" + dishes.get(position).getRate());
                 intent.putExtra("description", "" + dishes.get(position).getDescription());
                 startActivity(intent);
             }

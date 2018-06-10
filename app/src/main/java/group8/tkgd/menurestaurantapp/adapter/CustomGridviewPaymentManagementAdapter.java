@@ -52,6 +52,7 @@ public class CustomGridviewPaymentManagementAdapter extends BaseAdapter {
             holder.image = viewrow.findViewById(R.id.imageDishPayment);
             holder.name = viewrow.findViewById(R.id.titleDishPayment);
             holder.price = viewrow.findViewById(R.id.titlePricePayment);
+            holder.rate = viewrow.findViewById(R.id.titleRatePayment);
             holder.countOfDish = viewrow.findViewById(R.id.titleCountOfDishDetailPayment);
             holder.count = (int)(Math.random()*10) % 3 + 1;
             viewrow.setTag(holder);
@@ -61,6 +62,7 @@ public class CustomGridviewPaymentManagementAdapter extends BaseAdapter {
         holder.image.setImageResource(dishes.get(position).getImage());
         holder.name.setText(dishes.get(position).getName());
         holder.price.setText("" + dishes.get(position).getPrice() + "$");
+        holder.rate.setText("" + dishes.get(position).getRate());
         holder.countOfDish.setText("" + holder.count);
         return viewrow;
     }
@@ -69,6 +71,7 @@ public class CustomGridviewPaymentManagementAdapter extends BaseAdapter {
         ImageView image;
         TextView name;
         TextView price;
+        TextView rate;
         TextView countOfDish;
         int count;
     }

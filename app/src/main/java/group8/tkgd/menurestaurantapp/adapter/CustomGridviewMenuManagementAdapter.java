@@ -59,6 +59,7 @@ public class CustomGridviewMenuManagementAdapter extends BaseAdapter {
             holder.image = viewrow.findViewById(R.id.imageDish);
             holder.name = viewrow.findViewById(R.id.titleDish);
             holder.price = viewrow.findViewById(R.id.titlePrice);
+            holder.rate = viewrow.findViewById(R.id.titleRate);
             holder.btnEdit = viewrow.findViewById(R.id.btnEditMenu);
             holder.btnDelete = viewrow.findViewById(R.id.btnDeleteMenu);
 
@@ -69,6 +70,7 @@ public class CustomGridviewMenuManagementAdapter extends BaseAdapter {
         holder.image.setImageResource(dishes.get(position).getImage());
         holder.name.setText(dishes.get(position).getName());
         holder.price.setText("" + dishes.get(position).getPrice() + "$");
+        holder.rate.setText("" + dishes.get(position).getRate());
         holder.btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -114,6 +116,7 @@ public class CustomGridviewMenuManagementAdapter extends BaseAdapter {
         ImageView image;
         TextView name;
         TextView price;
+        TextView rate;
         Button btnEdit;
         Button btnDelete;
     }
