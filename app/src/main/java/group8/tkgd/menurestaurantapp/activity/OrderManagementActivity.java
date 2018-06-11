@@ -65,14 +65,20 @@ public class OrderManagementActivity extends AppCompatActivity {
             }
         });
 
+        int totalPrice = 0;
+        for (int i = 0; i < dishes.size(); i++) {
+            totalPrice+= dishes.get(i).getPrice();
+        }
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabOrder);
+        final int finalTotalPrice = totalPrice;
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 AlertDialog alertDialog = new AlertDialog.Builder(OrderManagementActivity.this)
                         .setTitle("Confirmation")
-                        .setMessage("Are you sure you want to order?")
+                        .setMessage("Are you sure you want to order " + finalTotalPrice + "$?")
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {

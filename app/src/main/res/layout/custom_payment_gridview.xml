@@ -9,70 +9,77 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
-            <ImageView
-                android:id="@+id/imageDishPayment"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="10dp"
-                android:scaleType="centerCrop" />
-            <TextView
+            <LinearLayout
+                android:layout_weight="1"
                 android:layout_margin="10dp"
-                android:id="@+id/titleDishPayment"
-                android:text="Name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <RelativeLayout
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:layout_alignParentLeft="true"
-                    android:id="@+id/titlePricePayment"
-                    android:text="Price"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:text="5"
-                    android:layout_toLeftOf="@id/imageRatePayment"
-                    android:id="@+id/titleRatePayment"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
                 <ImageView
-                    android:id="@+id/imageRatePayment"
-                    android:layout_alignParentEnd="true"
-                    android:src="@drawable/ic_rate"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp" />
-            </RelativeLayout>
+                    android:id="@+id/imageDishPayment"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:scaleType="centerCrop" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_margin="10dp"
+                    android:id="@+id/titleDishPayment"
+                    android:text="Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <RelativeLayout
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:id="@+id/titleCountPayment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="Count: " />
+                    <TextView
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/titleCountPayment"
+                        android:text="0"
+                        android:id="@+id/titleCountOfDishDetailPayment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_alignParentLeft="true"
+                        android:id="@+id/titlePricePayment"
+                        android:text="Price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:text="5"
+                        android:layout_toLeftOf="@id/imageRatePayment"
+                        android:id="@+id/titleRatePayment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:id="@+id/imageRatePayment"
+                        android:layout_alignParentEnd="true"
+                        android:src="@drawable/ic_rate"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp" />
+                </RelativeLayout>
+            </LinearLayout>
         </LinearLayout>
-
     </android.support.v7.widget.CardView>
-    <RelativeLayout
-        android:layout_margin="10dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="50dp">
-
-        <TextView
-            android:id="@+id/titleCountPayment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:text="Count: " />
-        <TextView
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@id/titleCountPayment"
-            android:text="0"
-            android:id="@+id/titleCountOfDishDetailPayment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </RelativeLayout>
 </LinearLayout>

@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -61,13 +62,21 @@ public class PaymentManagementActivity extends AppCompatActivity {
             }
         });
 
+        TextView titleTotalPriceOfDishPayment = findViewById(R.id.titleTotalPriceOfDishPayment);
+        int totalPrice = 0;
+        for (int i = 0; i < dishes.size(); i++) {
+            totalPrice+= dishes.get(i).getPrice();
+        }
+        titleTotalPriceOfDishPayment.setText("" + totalPrice + "$");
+
         FloatingActionButton fab = findViewById(R.id.fabPayment);
+        final int finalTotalPrice = totalPrice;
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AlertDialog alertDialog = new AlertDialog.Builder(PaymentManagementActivity.this)
                         .setTitle("Confirmation")
-                        .setMessage("Are you sure you want to pay?")
+                        .setMessage("Are you sure you want to pay " + finalTotalPrice + "$?")
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
